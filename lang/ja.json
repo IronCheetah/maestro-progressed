@@ -1,8 +1,8 @@
 {
     "MAESTRO": {
-        "MODULE_NAME": "Maestro",
+        "MODULE_NAME": "Maestro-progressed",
 
-        "MODULE_LABEL": "Maestro",
+        "MODULE_LABEL": "Maestro-progressed",
 
         "SETTINGS.HypeTrackEnableN": "キャラ固有BGMを使用する",
         "SETTINGS.HypeTrackEnableH": "特定のキャラクターのための固有BGMを設定できます。",

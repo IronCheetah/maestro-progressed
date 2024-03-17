@@ -40,6 +40,8 @@ export default class Conductor {
             ItemTrack._onReady();
             CombatTrack._onReady();
 
+            Conductor.addSceneControlButton();
+
             Misc._checkForCriticalPlaylist();
             Misc._checkForFailurePlaylist();
 
@@ -204,6 +206,80 @@ export default class Conductor {
         });
         
     }
+
+
+    static addSceneControlButton(){
+        const SceneControl = new SceneControls();
+        console.log(SceneControl)
+    
+        SceneControl.getData().then(response =>{
+            console.log(response)
+        })
+    
+        SceneControl.controls.push(
+            {
+                name: "maestro-progressed",
+                activeTool: "toggle-hype",
+                icon: "fas fa-user-music",
+                layer: "maestro-progressed",
+                title: "Maestro Progressed",
+                visible: true,
+                tools: [
+                    {
+                        icon: "fas fa-user-music",
+                        name: "toggle-hype",
+                        title: "CONTROLS.ToggleHypeTrack",
+                        toggle: false,
+                        active: false,
+                        button: false,
+                        toolclip: {
+                            src: '',
+                            heading: '',
+                            items: []
+                        },
+                        onClick: handleButtons,
+                        visible: true
+                    }
+                ]
+            }
+        )
+    }
+
+    
+}
+
+    /**
+     * Render Scene Controls Hook
+     */
+
+Hooks.on('renderSceneControls', (sceneControls, html) => {
+    const loggedInUserListItem = html.find(`.main-controls`)
+    console.log(sceneControls)
+
+    sceneControls.render();
+
+    
+    /*
+    // insert a button at the end of this element
+    loggedInUserListItem.append(
+        `<li class="scene-control maestro-control-button" data-control="maestro-control" data-canvas-layer="maestro-control" aria-label="Maestro Controls" role="tab" aria-controls="tools-panel-maestro-control" data-tooltip="Maestro Controls"><i class='fas fa-user-music'></i></li>`
+    );
+    
+    html.on('click', '.maestro-control-button', (event) => {
+        console.log(event)
+        console.log(sceneControls)
+        const maestroControlButton = html.find(event.currentTarget)
+        console.log(maestroControlButton)
+        maestroControlButton.addClass('active')
+
+        const isPaused = HypeTrack.toggleHypeTrackPaused()
+        if (isPaused) HypeTrack.pauseHypeTrack()
+    });*/
+});
+
+function handleButtons(){
+    return ''
+
 }
 
 /**

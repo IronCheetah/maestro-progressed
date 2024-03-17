@@ -9,29 +9,58 @@ export default class HypeTrack {
     }
 
     /* -------------------------------------------- */
+    /*               Maestro Progressed             */
+    /* -------------------------------------------- */
+
+    isHypeTrackPauseToggled = false
+
+    static toggleHypeTrackPaused(){
+        this.isHypeTrackPauseToggled = !this.isHypeTrackPauseToggled
+        return this.isHypeTrackPauseToggled
+    }
+
+    static pauseHypeTrack(){
+        if (game.maestro.hypeTrack) {
+            game.maestro.hypeTrack._stopHypeTrack();
+        }
+    }
+
+    /* -------------------------------------------- */
     /*                 Hook Handlers                */
     /* -------------------------------------------- */
 
     static _onReady() {
         if (game.maestro.hypeTrack) {
             game.maestro.hypeTrack._checkForHypeTracksPlaylist();
+            console.log('ITS HYPE TRACK TIME 1')
+            if (this.isHypeTrackPauseToggled){
+                console.log('maestro-progressed | Hype Track paused because Hype Track Pause toggled on')
+                return
+            }
             game.maestro.playHype = game.maestro.hypeTrack.playHype.bind(game.maestro.hypeTrack);
         }
     }
 
     static _onUpdateCombat(combat, update, options, userId) {
+        console.log('ITS HYPE TRACK TIME 2')
         if (game.maestro.hypeTrack) {
+            if (this.isHypeTrackPauseToggled){
+                console.log('maestro-progressed | Hype Track paused because Hype Track Pause toggled on')
+                return
+            }
             game.maestro.hypeTrack._processHype(combat, update);
         }
     }
 
     static _onDeleteCombat(combat, options, userId) {
+        console.log('ITS HYPE TRACK TIME 3')
         if (game.maestro.hypeTrack) {
             game.maestro.hypeTrack._stopHypeTrack();
         }
     }
 
     static _onRenderActorSheet(app, html, data) {
+        console.log('ITS HYPE TRACK TIME 4')
         if (game.maestro.hypeTrack) {
             game.maestro.hypeTrack._addHypeButton(app, html, data);
         }

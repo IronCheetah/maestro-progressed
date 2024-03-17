@@ -1,8 +1,8 @@
 {
     "MAESTRO": {
-        "MODULE_NAME": "Maestro",
+        "MODULE_NAME": "Maestro-progressed",
 
-        "MODULE_LABEL": "Maestro",
+        "MODULE_LABEL": "Maestro-progressed",
 
         "SETTINGS.HypeTrackEnableN": "Ativar Trilha Excitante",
         "SETTINGS.HypeTrackEnableH": "Habilite a capacidade de definir uma musica tema para um Ator",

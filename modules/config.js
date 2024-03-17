@@ -1,6 +1,6 @@
-export const MODULE_NAME = "maestro";
+export const MODULE_NAME = "maestro-progressed";
 
-export const MODULE_LABEL = "Maestro";
+export const MODULE_LABEL = "Maestro-progressed";
 
 export const DEFAULT_CONFIG = {
     get SceneMusic() {
@@ -9,7 +9,7 @@ export const DEFAULT_CONFIG = {
             flagNames: {
                 playlist: "playlistId"
             },
-            templatePath: "./modules/maestro/templates/playlist-select.html"
+            templatePath: "./modules/maestro-progressed/templates/playlist-select.html"
         }
        
     },
@@ -25,7 +25,7 @@ export const DEFAULT_CONFIG = {
                 playlist: "playlist",
                 track: "track"
             },
-            templatePath: "./modules/maestro/templates/hype-track-form.html"
+            templatePath: "./modules/maestro-progressed/templates/hype-track-form.html"
         }
         
     },
@@ -47,7 +47,7 @@ export const DEFAULT_CONFIG = {
                 random: "random-track",
                 all: "play-all"
             },
-            templatePath: "./modules/maestro/templates/item-track-form.html"
+            templatePath: "./modules/maestro-progressed/templates/item-track-form.html"
         }
     },
 
@@ -67,7 +67,7 @@ export const DEFAULT_CONFIG = {
                 random: "random-track",
                 all: "play-all"
             },
-            templatePath: "./modules/maestro/templates/combat-track-form.html"
+            templatePath: "./modules/maestro-progressed/templates/combat-track-form.html"
         }
     },
 
@@ -91,7 +91,7 @@ export const DEFAULT_CONFIG = {
             criticalSuccessPlaylistName: "Critical Success Tracks",
             criticalFailurePlaylistName: "Critical Failure Tracks",
             maestroConfigTitle: "Additional Configuration",
-            maestroConfigTemplatePath: "./modules/maestro/templates/maestro-config.html"
+            maestroConfigTemplatePath: "./modules/maestro-progressed/templates/maestro-config.html"
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "maestro",
+  "name": "maestro-progressed",
   "version": "0.9.0",
   "description": "Adds new audio features to Foundry VTT",
   "main": "maestro.js",
